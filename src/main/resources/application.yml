@@ -1,0 +1,26 @@
+server:
+  port: 9280
+  servlet:
+    context-path: /quartz
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 30MB
+      enabled: true
+      file-size-threshold: 10MB
+      location: /files/temp
+spring:
+  profiles:
+    default: local
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3308/quartz?serverTimezone=UTC&characterEncoding=UTF-8&passwordCharacterEncoding=UTF-8
+    username:
+    password:
+    hikari:
+      maximum-pool-size: 100
+      minimumIdle: 25
+      idleTimeout: 10000
+      poolName: SpringBootJPAHikariCP
+      maxLifetime: 420000
+      connection-timeout: 10000
