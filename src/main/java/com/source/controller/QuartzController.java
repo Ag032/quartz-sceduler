@@ -1,8 +1,10 @@
 package com.source.controller;
 
-import com.source.model.request.QuartzRequest;
+import com.source.exception.BusinessException;
 import com.source.service.QuartzService;
 import lombok.RequiredArgsConstructor;
+import org.quartz.SchedulerException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +16,8 @@ public class QuartzController {
   private final QuartzService quartzService;
 
   @PostMapping("make")
-  public void startQuartzSchedulerSetting() throws Exception{
+  @ExceptionHandler(BusinessException.class)
+  public void startQuartzSchedulerSetting() throws SchedulerException {
     quartzService.startQuartzSchedulerSetting();
   }
 

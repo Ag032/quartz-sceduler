@@ -15,8 +15,8 @@ spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3308/quartz?serverTimezone=UTC&characterEncoding=UTF-8&passwordCharacterEncoding=UTF-8
-    username:
-    password:
+    username: wise
+    password: wiseai2024!
     hikari:
       maximum-pool-size: 100
       minimumIdle: 25
