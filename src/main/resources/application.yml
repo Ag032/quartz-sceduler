@@ -24,3 +24,12 @@ spring:
       poolName: SpringBootJPAHikariCP
       maxLifetime: 420000
       connection-timeout: 10000
+
+  quartz:
+    scheduler:
+      instancedId: AUTO
+    job-store-type: jdbc
+
+
+
+

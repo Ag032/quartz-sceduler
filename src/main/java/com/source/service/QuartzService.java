@@ -87,7 +87,7 @@ public class QuartzService {
   public void schedulerSetting(JobRequest request) throws Exception {
     final var scheduler = new StdSchedulerFactory().getScheduler();
     final var classFile =  Class.forName("com.source.job."+request.getJobClassName());
-    final var jobDataMap = JobDataMapSupport.newJobDataMap(Map.of("param", "request.get"));
+//    final var jobDataMap = JobDataMapSupport.newJobDataMap(Map.of("param", "request.get"));
 
     final var jobDetail = JobBuilder
         .newJob((Class<? extends Job>) classFile)
@@ -131,21 +131,21 @@ public class QuartzService {
 //    scheduler.resumeJob(jobKey);
 //  }
 
-  /**
-   * 쿼츠 리스트
-   * @param request
-   * @throws Exception
-   */
-  public void getQuartzSchedulerList(JobRequest request) throws Exception{
-    final var scheduler = new StdSchedulerFactory().getScheduler();
-    final var schedulerGroupNameList = scheduler.getJobGroupNames();
-    for(final var jobGroupName: schedulerGroupNameList){
-      final var jobkeys = scheduler.getJobKeys(GroupMatcher.jobGroupEquals(jobGroupName));
-
-      for(final var jobKey : jobkeys){
-        final var jobInfo = scheduler.getJobDetail(jobKey);
-        final var jobDateInfo = scheduler.getTriggersOfJob(jobKey);
-      }
-    }
-  }
+//  /**
+//   * 쿼츠 리스트
+//   * @param request
+//   * @throws Exception
+//   */
+//  public void getQuartzSchedulerList(JobRequest request) throws Exception{
+//    final var scheduler = new StdSchedulerFactory().getScheduler();
+//    final var schedulerGroupNameList = scheduler.getJobGroupNames();
+//    for(final var jobGroupName: schedulerGroupNameList){
+//      final var jobkeys = scheduler.getJobKeys(GroupMatcher.jobGroupEquals(jobGroupName));
+//
+//      for(final var jobKey : jobkeys){
+//        final var jobInfo = scheduler.getJobDetail(jobKey);
+//        final var jobDateInfo = scheduler.getTriggersOfJob(jobKey);
+//      }
+//    }
+//  }
 }

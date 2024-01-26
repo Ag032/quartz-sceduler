@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/quratz/setting")
+@RequestMapping("/quartz/setting")
 public class QuartzController {
   private final QuartzService quartzService;
 
@@ -27,13 +27,8 @@ public class QuartzController {
     quartzService.schedulerSetting(request);
   }
 
-  @GetMapping("get")
-  public void getQuartzSchedulerList(JobRequest request) throws Exception{
-    quartzService.getQuartzSchedulerList(request);
-  }
-
-//  @GetMapping("scheduler")
-//  public void getQuartzScheduler() throws Exception{
-//    quartzService.getQuartzScheduler();
+//  @GetMapping("get")
+//  public void getQuartzSchedulerList(JobRequest request) throws Exception{
+//    quartzService.getQuartzSchedulerList(request);
 //  }
 }

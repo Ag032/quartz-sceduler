@@ -12,6 +12,6 @@ public class TestJob implements Job {
     context.getMergedJobDataMap();
 
 
-    System.out.println("## test jOb Call");
+    System.out.println("## test job Call");
   }
 }
